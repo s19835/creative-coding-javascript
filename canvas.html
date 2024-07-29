@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas width="600" height="600"></canvas>
+
+	<script>
+		const convas = document.querySelector('canvas');
+		const context = convas.getContext('2d');
+
+		context.strokeStyle = 'white';
+
+		for(let i = 0; i < 5; i++) {
+			for (let j = 0; j < 5; j++) {
+				const height = 60;
+				const width = 60;
+				const gap = 20;
+				const x = 100 + (width + gap) * i;
+				const y = 100 + (width + gap) * j;
+
+				context.beginPath();
+				context.rect(x, y, width, height);
+				context.stroke();
+			}
+		}
+	</script>
+</body>
+</html>
