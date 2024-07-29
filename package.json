@@ -1,0 +1,15 @@
+{
+  "name": "creative-coding-javascript",
+  "version": "1.0.0",
+  "description": "Create engaging visuals with code, Explore the fundamentals of programming and learn how to draw with creative coding in JavaScript.",
+  "main": "sketch-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.7"
+  }
+}
