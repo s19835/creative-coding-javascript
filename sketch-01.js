@@ -17,7 +17,7 @@ const sketch = () => {
 		const w = width / 10;
 		const gap = h / 3;
     const n = 7; // n - number of iterations of rects
-    const offset = 0.01 * width;
+    const offset = 0.015 * width;
 		let x, y;
 
     for(let i = 0; i < n; i++) {
@@ -26,14 +26,14 @@ const sketch = () => {
 				y = 100 + (h + gap) * j;
 
 				// Draw the rectangels
-        context.lineWidth = Math.random(0.01);
+        context.lineWidth = Math.random(0.0078) * width * 0.002;
 				context.beginPath();
 				context.rect(x, y, w, h);
 				context.stroke();
 
         // Draw the small ones
 				if (Math.random() < 0.5) {
-					context.lineWidth = Math.random(0.0078);
+          context.lineWidth = Math.random(0.0078) * width * 0.002;
 					context.beginPath();
 					context.rect(x + offset / 2, y + offset / 2, w - offset, h - offset);
 					context.stroke();
