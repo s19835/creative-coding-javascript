@@ -6,17 +6,18 @@ const settings = {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = 'white';
+    context.fillStyle = 'black';
     context.fillRect(0, 0, width, height);
     
-    context.strokeStyle = 'black';
-    context.lineWidth = 5;
+    context.strokeStyle = 'white';
+    context.lineWidth = 0.01 * width;
 
     // Declare the rectangle properties
 		const h = height / 10;
 		const w = width / 10;
 		const gap = h / 3;
     const n = 7; // n - number of iterations of rects
+    const offset = 0.01 * width;
 		let x, y;
 
     for(let i = 0; i < n; i++) {
@@ -25,20 +26,21 @@ const sketch = () => {
 				y = 100 + (h + gap) * j;
 
 				// Draw the rectangels
+        context.lineWidth = Math.random(0.01);
 				context.beginPath();
 				context.rect(x, y, w, h);
 				context.stroke();
 
         // Draw the small ones
 				if (Math.random() < 0.5) {
-					// context.strokeStyle = 'red';
+					context.lineWidth = Math.random(0.0078);
 					context.beginPath();
-					context.rect(x + (2*w) / 15, y + (2*h) / 15, w - (4*w) / 15, h - (4*h) / 15);
+					context.rect(x + offset / 2, y + offset / 2, w - offset, h - offset);
 					context.stroke();
 				}
       }
     }
-  };
-};
+  }
+}
 
 canvasSketch(sketch, settings)
