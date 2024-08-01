@@ -25,6 +25,11 @@ const sketch = () => {
     context.fill();
     context.restore();
 
+    context.translate(100, 400);
+    context.beginPath();
+    context.arc(width/2, height/2, 50, 0, 2 * Math.PI, false);
+    context.fill();
+
   };
 };
 
