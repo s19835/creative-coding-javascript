@@ -1,15 +1,9 @@
 import canvasSketch from 'canvas-sketch';
+import math from 'canvas-sketch-util/math';
+import random from 'canvas-sketch-util/random';
 
 const settings = {
   dimensions: [ 2048, 2048 ]
-}
-
-const degToRad = (degree) => {
-  return degree / 180 * Math.PI;
-}
-
-const randomRange = (min, max) => {
-  return Math.random() * (max - min) + min;
 }
 
 const sketch = () => {
@@ -28,7 +22,7 @@ const sketch = () => {
     const num = 12;
     const radius = width * 0.3; // radius for circle
     // declare the angle to loop
-    const slice = degToRad(360 / num);
+    const slice = math.degToRad(360 / num);
 
     for (let i = 0; i < num; i++) {
       const angle = slice * i;
@@ -39,7 +33,7 @@ const sketch = () => {
       context.save();
       context.translate(x, y);
       context.rotate(-angle);
-      context.scale(randomRange(0.5, 1), randomRange(1, 1.8));
+      context.scale(random.range(0.5, 1), random.range(1, 1.8));
 
       context.beginPath();
       context.rect(-w * 0.5, -h * 0.5, w, h);
@@ -47,7 +41,7 @@ const sketch = () => {
       context.restore();
     }
 
-  };
-};
+  }
+}
 
 canvasSketch(sketch, settings);
