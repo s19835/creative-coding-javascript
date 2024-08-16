@@ -1,4 +1,4 @@
-const canvasSketch = require('canvas-sketch');
+import canvasSketch from 'canvas-sketch';
 
 const settings = {
   dimensions: [ 2048, 2048 ]
