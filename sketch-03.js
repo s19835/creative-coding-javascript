@@ -8,8 +8,9 @@ const settings = {
 
 const sketch = ({ context, width, height }) => {
   const agents = [];
+  const numParticles = 40;
   
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < numParticles; i++) {
     const x = random.range(0, width);
     const y = random.range(0, height);
     agents.push(new Agent(x, y));
