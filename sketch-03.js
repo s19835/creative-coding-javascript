@@ -6,7 +6,7 @@ const settings = {
   animate: true,
 };
 
-const sketch = ({ context, width, height }) => {
+const sketch = ({ width, height }) => {
   const agents = [];
   const numParticles = 40;
   
@@ -62,7 +62,7 @@ class Agent {
     context.lineWidth = 4;
 
     context.beginPath();
-    context.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2);
+    context.arc(0, 0, this.radius, 0, Math.PI * 2);
     context.fill();
     context.stroke();
 
