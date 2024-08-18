@@ -81,6 +81,13 @@ class Agent {
     if (this.pos.y - this.radius <= 0 || this.pos.y + this.radius >= height) this.vel.y *= -1;
   }
 
+  wrap(width, height) {
+    if (this.pos.x <= 0) this.vel.x *= -1;
+    if (this.pos.y <= 0) this.vel.y *= -1;
+    if (this.pos.x >= width) this.pos.x = 0;
+    if (this.pos.y >= height) this.pos.y = 0;
+  }
+
   draw(context) {
     context.save();
     context.translate(this.pos.x, this.pos.y);
