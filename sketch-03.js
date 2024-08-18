@@ -25,6 +25,10 @@ const sketch = ({ width, height }) => {
   
       for (let k = j + 1; k < agents.length; k++) {
         const neighbour = agents[k];
+
+        const distance = agent.pos.getDistance(neighbour.pos);
+
+        if (distance > 200) continue;
   
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
@@ -48,6 +52,12 @@ class Vector {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+  }
+
+  getDistance(v) {
+    const dx = this.x - v.x;
+    const dy = this.y - v.y;
+    return Math.sqrt(dx * dx + dy * dy);
   }
 }
 
