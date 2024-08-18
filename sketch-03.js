@@ -51,8 +51,8 @@ class Agent {
   }
 
   bounce(width, height) {
-    if (this.pos.x <= 0 || this.pos.x >= width) this.vel.x *= -1;
-    if (this.pos.y <= 0 || this.pos.y >= height) this.vel.y *= -1;
+    if (this.pos.x - this.radius <= 0 || this.pos.x + this.radius >= width) this.vel.x *= -1;
+    if (this.pos.y - this.radius <= 0 || this.pos.y + this.radius >= height) this.vel.y *= -1;
   }
 
   draw(context) {
