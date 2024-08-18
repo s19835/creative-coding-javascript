@@ -1,5 +1,6 @@
 import canvasSketch from 'canvas-sketch';
 import random from 'canvas-sketch-util/random';
+import math from 'canvas-sketch-util/math';
 
 const settings = {
   dimensions: [ 1080, 1080 ],
@@ -29,6 +30,8 @@ const sketch = ({ width, height }) => {
         const distance = agent.pos.getDistance(neighbour.pos);
 
         if (distance > 200) continue;
+
+        context.lineWidth = math.mapRange(distance, 0, 200, 4, 1);
   
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
