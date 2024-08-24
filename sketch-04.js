@@ -41,7 +41,7 @@ const sketch = () => {
       context.translate(x + margx + cellw * 0.5, y + margy + cellh * 0.5);
       context.rotate(angle);
 
-      context.lineWidth = scale; 
+      context.lineWidth = scale * 0.1;
 
       context.moveTo(w * -0.5, 0);
       context.lineTo(w * 0.5, 0);
