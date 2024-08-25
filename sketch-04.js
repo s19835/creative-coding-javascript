@@ -1,5 +1,5 @@
 import canvasSketch from 'canvas-sketch';
-import { noise2D } from 'canvas-sketch-util/random';
+import { noise2D, noise3D } from 'canvas-sketch-util/random';
 import { mapRange } from 'canvas-sketch-util/math';
 //import {Pane} from 'tweakpane';
 
@@ -49,7 +49,8 @@ const sketch = () => {
 
       const f = params.animate ? frame: params.frame;
 
-      const n = noise2D(x + frame * 10, y, 0.001);
+      //const n = noise2D(x + frame * 10, y, params.freq);
+      const n = noise3D(x, y, f * 10, params.freq);
       
       const angle = n * Math.PI * params.amp;
       const scale = mapRange(n, -1, 1, params.scaleMin, params.scaleMax);
